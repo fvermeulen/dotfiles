@@ -1,0 +1,53 @@
+[core]
+	excludefile = /Users/fokkevermeulen/.gitignore
+	excludesfile = /Users/fokkevermeulen/.gitignore_global
+[user]
+	name = Fokke Vermeulen
+	email = f.vermeulen@rebuy.de
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[diff]
+	tool = diffmerge
+#setup for specific difftool
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+#general setup for difftools
+[difftool]
+	#do not ask before opening the difftool for each file
+	prompt = false
+
+[merge]
+	tool = diffmerge
+	#by default git keeps a backup as file.orig in case you mess up
+	#if you mess up a conflict merge you can just do a "git checkout -m path/to/file" see "man git-checkout"
+	keepbackup = false
+	#setup for specific mergetool
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+    keepTemporaries = false
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+    prompt = false
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	cb = checkout -b
+	lpo = log --pretty=oneline --abbrev-commit --graph --decorate
+	l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	l3 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	me = merge --no-ff --edit
+	gpor = pull origin release
+	ds = diff --staged
+	dts = difftool --staged --diff-filter=ACMRTUXB
+[push]
+	default = simple
