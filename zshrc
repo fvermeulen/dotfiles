@@ -99,3 +99,5 @@ alias gitconfig='vim ~/.gitconfig'
 
 alias comu='composer update'
 alias comi='composer install'
+
+alias gpfolders='find . -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'

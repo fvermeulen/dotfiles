@@ -6,7 +6,7 @@
 	email = f.vermeulen@rebuy.de
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -38,6 +38,8 @@
 [alias]
 	st = status
 	ci = commit
+	c = commit
+	cam = commit -am
 	co = checkout
 	br = branch
 	cb = checkout -b
@@ -49,5 +51,6 @@
 	gpor = pull origin release
 	ds = diff --staged
 	dts = difftool --staged --diff-filter=ACMRTUXB
+	aa = add --all
 [push]
 	default = simple
