@@ -86,10 +86,15 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-alias cdreb='cd ~/dev/rebuy'
+alias reb='cd ~/dev/rebuy'
+alias vag='cd ~/dev/rebuy/vagrant'
+alias rebus='cd ~/dev/rebuy/universal-app'
+alias rebmo='cd ~/dev/rebuy/mobile-service'
+alias rebip='cd ~/dev/rebuy/iphone-app'
 alias cdvag='cd ~/dev/rebuy/vagrant'
 alias cdrebip='cd ~/dev/rebuy/iphone-app'
 
+alias xsdk='cd /Users/fokkevermeulen/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/'
 alias finder='open .'
 alias desktop='cd ~/Desktop'
 
@@ -99,5 +104,7 @@ alias gitconfig='vim ~/.gitconfig'
 
 alias comu='composer update'
 alias comi='composer install'
+
+alias gti='git'
 
 alias gpfolders='find . -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'

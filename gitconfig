@@ -40,9 +40,11 @@
 	ci = commit
 	c = commit
 	cam = commit -am
+  ciam = commit -a --amend
 	co = checkout
 	br = branch
 	cb = checkout -b
+  pf = push -f
 	lpo = log --pretty=oneline --abbrev-commit --graph --decorate
 	l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -51,6 +53,7 @@
 	gpor = pull origin release
 	ds = diff --staged
 	dts = difftool --staged --diff-filter=ACMRTUXB
+  p = pull
 	aa = add --all
 [push]
 	default = simple
